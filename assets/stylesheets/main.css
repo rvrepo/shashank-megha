@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Rouge Script', cursive;
+  background: #DC4343;
+}
+
+#hero-unit {
+  /* height: 100vh; */
+  background-image: url('../images/3.png');
+  background-size: cover;
+  /* background-image: url("https://cache.marriott.com/marriottassets/marriott/MLEXR/mlexr-group-dinner-2672-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*"); */
+  text-align: center;
+  background-repeat: no-repeat;
+  padding-top: 35px;
+  font-family: 'Rouge Script', cursive;
+}
+
+#hero-unit::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(245, 177, 117, 0.55) */
+}
+
+#hero-text {
+  font-size: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtext {
+  font-size: 50px;
+  position: relative;
+    z-index: 1;
+}
+
+#date {
+  font-size: 100px;
+  margin-top: 0px;
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+#countdown {
+  height: 100vh;
+  color: #DC4343;
+  text-align: center;
+  font-size: 100px;
+  padding-top: 150px;
+}
+
+#timer {
+  font-size: 100px;
+  position: relative;
+  z-index: 1;
+  height: 150px;
+}
+
+
+#map {
+  height: 300px;
+  width: 70%;
+  margin: 30px auto;
+  border: 10px solid white;
+}
+
+#location, #contact {
+  background: #DC4343;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#address-heading, #contact-heading {
+  font-size: 50px;
+}
+
+#address-text, #contact-text {
+  font-size: 30px;
+}
+
+#copyright {
+  text-align: center;
+  font-family: monospace;
+}
+
+a, a:focus, a:active, a:hover {
+  color: #ffffff;
+}
