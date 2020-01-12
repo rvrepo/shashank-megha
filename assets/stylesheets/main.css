@@ -1,20 +1,45 @@
 body {
   margin: 0;
   padding: 0;
-  color: white;
-  font-family: 'Rouge Script', cursive;
-  background: #DC4343;
+  color: #ffca32;
+  /* font-family: 'Rouge Script', cursive; */
+  font-family: 'Berkshire Swash', cursive;
+  background: #241441;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h2 {
+  margin-bottom: 50px;
+}
+
+.nav-link {
+  color: #ffca32 !important;
+}
+
+.bg-light {
+  background: #241441 !important;
+  background: #0f0c29 !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.hero-background {
+  background-image: url('../images/3.png');
+  background-size: cover;
 }
 
 #hero-unit {
-  /* height: 100vh; */
-  background-image: url('../images/3.png');
-  background-size: cover;
-  /* background-image: url("https://cache.marriott.com/marriottassets/marriott/MLEXR/mlexr-group-dinner-2672-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*"); */
   text-align: center;
   background-repeat: no-repeat;
   padding-top: 35px;
-  font-family: 'Rouge Script', cursive;
+  font-family: 'Poiret One', cursive;
+  margin: 40px auto;
+  border: 10px solid;
+  max-width: 900px;
+  background: #24144196;
 }
 
 #hero-unit::after {
@@ -32,37 +57,57 @@ body {
   font-size: 100px;
   position: relative;
   z-index: 1;
+  font-family: 'Rouge Script', cursive;
 }
 
 .hero-subtext {
-  font-size: 50px;
+  font-size: 30px;
   position: relative;
     z-index: 1;
 }
 
 #date {
-  font-size: 100px;
+  font-size: 60px;
   margin-top: 0px;
   padding-bottom: 30px;
   position: relative;
   z-index: 1;
 }
 
-#countdown {
+/* #countdown {
   height: 100vh;
   color: #DC4343;
   text-align: center;
-  font-size: 100px;
+  font-size: 60px;
   padding-top: 150px;
-}
+} */
 
 #timer {
-  font-size: 100px;
+  font-size: 60px;
   position: relative;
   z-index: 1;
   height: 150px;
+  width: 570px;
+  margin: 20px auto;
 }
 
+#timer div {
+  float: left;
+  margin: 0 10px;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+#timer span {
+  display: block;
+}
+
+.timer-subtext {
+  font-size: 10px;
+  text-transform: capitalize;
+}
 
 #map {
   height: 300px;
@@ -71,13 +116,13 @@ body {
   border: 10px solid white;
 }
 
-#location, #contact {
-  background: #DC4343;
+#location, #contact, #events {
+  /* background: #DC4343; */
   padding: 50px 0;
   text-align: center;
 }
 
-#address-heading, #contact-heading {
+#address-heading, #contact-heading, .events-heading {
   font-size: 50px;
 }
 
@@ -88,11 +133,53 @@ body {
 #copyright {
   text-align: center;
   font-family: monospace;
+  margin: 50px 0;
 }
 
 a, a:focus, a:active, a:hover {
-  color: #ffffff;
+  color: #ffca32;
+}
 
+.swirl-left {
+  display: inline-block;
+  background: url(../images/swirl_left.png) no-repeat left;
+  padding: 0 0 0 140px;
+}
 
-  
+.swirl-right {
+  display: inline-block;
+  background: url(../images/swirl_right.png) no-repeat right;
+  padding: 0 140px 0 0px;
+}
+
+#footer {
+  text-align: center;
+}
+
+.events-block-wrapper {
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.events-heading {
+  margin-bottom: 50px;
+}
+
+#engagement {
+  margin-right: 20px;
+  float: left;
+}
+
+#reception {
+  float: right;
+}
+
+.events-sub-heading {
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.events-block {
+  border: 5px solid;
+  padding: 50px;
 }

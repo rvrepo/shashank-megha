@@ -10,7 +10,7 @@
 
 
   // Set the date we're counting down to
-  var countDownDate = new Date("Feb 28, 2020 00:00:00").getTime();
+  var countDownDate = new Date("Feb 28, 2020 21:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function() {
@@ -21,6 +21,14 @@
     // Find the distance between now and the count down date
     var distance = countDownDate - now;
 
+    if (distance < 0) {
+      distance = now - countDownDate;
+      var marriedEle = document.getElementById('married-text');
+      marriedEle.innerHTML = 'got married on'
+      var countingEle = document.getElementById('counting-text');
+      countingEle.innerHTML = 'married since';
+    }
+
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -28,14 +36,34 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
+    var daysEle = document.getElementById("days");
+    var hoursEle = document.getElementById("hours");
+    var minutesEle = document.getElementById("minutes");
+    var sencondsEle = document.getElementById("seconds");
+    var daysText = 'days';
+    var hoursText = 'hours';
+    var minutesText = 'minutes';
+    var secondsText = 'seconds';
 
-    // If the count down is finished, write some text
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("timer").innerHTML = "EXPIRED";
+    if (days === 1) {
+      daysText = 'day';
     }
+    if (hours === 1) {
+      hoursText = 'hour';
+    }
+    if (minutes === 1) {
+      minutesText = 'minute';
+    }
+    if (seconds === 1) {
+      secondsText = 'second';
+    }
+
+    daysEle.innerHTML = '<span>' + days + '</span>' + '<span class="timer-subtext">' + daysText + '</span>';
+    hoursEle.innerHTML = '<span>' + hours + '</span>' + '<span class="timer-subtext">' + hoursText + '</span>';
+    minutesEle.innerHTML = '<span>' + minutes + '</span>' + '<span class="timer-subtext">' + minutesText + '</span>';
+    sencondsEle.innerHTML = '<span>' + seconds + '</span>' + '<span class="timer-subtext">' + secondsText + '</span>';
+
+
   }, 1000);
 
 
