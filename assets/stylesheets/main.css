@@ -27,7 +27,7 @@ h2 {
 }
 
 .hero-background {
-  background-image: url('../images/3.png');
+  background-image: url('../images/main.jpg');
   background-size: cover;
 }
 
@@ -116,13 +116,13 @@ h2 {
   border: 10px solid white;
 }
 
-#location, #contact, #events {
+#location, #contact, #events, #card {
   /* background: #DC4343; */
   padding: 50px 0;
   text-align: center;
 }
 
-#address-heading, #contact-heading, .events-heading {
+#address-heading, #contact-heading, .events-heading, .card-heading {
   font-size: 50px;
 }
 
@@ -182,4 +182,60 @@ a, a:focus, a:active, a:hover {
 .events-block {
   border: 5px solid;
   padding: 50px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url(../images/menu.svg);
+}
+
+button:focus {
+  outline: none;
+}
+
+.get-direction {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #timer {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+  }
+  #timer div {
+    width: 15%;
+    height: 60px;
+    flex: 1;
+  }
+  .swirl-left {
+    padding: 0 0 0 100px;
+    background-size: 70px 25px;
+  }
+  .swirl-right {
+    padding: 0 100px 0 0px;
+    background-size: 70px 25px;
+  }
+  #hero-text {
+    font-size: 80px;
+  }
+  #hero-text span {
+    display: block;
+  }
+}
+
+@media (max-width: 750px) {
+  #engagement {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 30px;
+    max-width: 350px;
+  }
+  #reception {
+    float: none;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  #map {
+    width: 100%;
+  }
 }
