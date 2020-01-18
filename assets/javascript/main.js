@@ -1,13 +1,4 @@
 (function() {
-  // var $timerElement = $("#timer");
-  // var weddingDate = new Date('02-28-2020');
-  // var today = Date.now();
-  // var dateDiff = weddingDate - today;
-
-
-
-
-
 
   // Set the date we're counting down to
   var countDownDate = new Date("Feb 28, 2020 21:00:00").getTime();
@@ -66,24 +57,46 @@
 
   }, 1000);
 
-
-
-
-
-
-
-
-
+  initMap();
 
 })();
 
 
 function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 23.066384, lng: 70.117546};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 15, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+
+  var mymap = L.map('map').setView([23.066384, 70.117546], 15);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+      '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11'
+  }).addTo(mymap);
+
+  var greenIcon = L.icon({
+    iconUrl: '/assets/images/marker.png',
+    iconSize:     [50, 50], // size of the icon
+    iconAnchor:   [50, 30], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-25, -35] // point from which the popup should open relative to the iconAnchor
+});
+
+  L.marker([23.066384, 70.117546], {icon: greenIcon}).addTo(mymap)
+    .bindPopup("<b>Basma Gardens</b><br />IFFCO Colony, Uday Nagar, Gandhidham.").openPopup();
+
+
+
+  var popup = L.popup();
+
+  function onMapClick(e) {
+    popup
+      .setLatLng(e.latlng)
+      .setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(mymap);
+  }
+
+  mymap.on('click', onMapClick);
+
+
+
 }
